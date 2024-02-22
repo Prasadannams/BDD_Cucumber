@@ -18,10 +18,10 @@ public class loginPage {
         driver.get("https://www.dru.care/signup-login-in/#/login");
 	}
 	
-	@When("User enter username and password")
-	public void user_enter_username_and_password() {
-	   driver.findElement(By.xpath("//input[@id='UserName']")).sendKeys("druprudhvi");
-	   driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Drucare@1");
+	@When("^User enter (.*) and (.*)$")
+	public void user_enter_username_and_password(String username , String password) {
+	   driver.findElement(By.xpath("//input[@id='UserName']")).sendKeys(username);
+	   driver.findElement(By.xpath("//input[@type='password']")).sendKeys(password);
 	}
 	
 	@When("Users click on login button")
